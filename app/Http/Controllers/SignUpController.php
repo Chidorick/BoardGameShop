@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Registered;
 
 class SignUpController extends Controller
 {
@@ -15,8 +16,8 @@ class SignUpController extends Controller
     public function signupCheck(Request $request)
     {
         $valid = $request->validate([
-            'name' => 'required|min:4|max:100',
-            'email' => 'required|email:rfc,dns|max:100',
+            'name' => 'required|min:4|max:100|unique:users,name',
+            'email' => 'required|email:rfc,dns|max:100|unique:users,email',
             'password' => 'required|min:8|max:100',
         ]);
 

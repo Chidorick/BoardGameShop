@@ -20,12 +20,12 @@
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="btn btn-outline-secondary">Home</a></li>
+                    <button type="button" class="btn btn-outline-secondary"onclick='location.href="/"'>Home</button>
                 </ul>
 
                 <div class="text-end">
                     <button type="button" class="btn btn-success">Login</button>
-                    <button type="button" class="btn btn-success">Sign-up</button>
+                    <button type="button" class="btn btn-success" onclick='location.href="/signup"'>Sign-up</button>
                     <button type="button" class="btn btn-warning">Cart</button>
                 </div>
             </div>
