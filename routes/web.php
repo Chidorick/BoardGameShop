@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use Nette\Utils\Image;
+use App\Http\Controllers\SignUpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,9 @@ use Nette\Utils\Image;
 |
 */
 
-Route::get('/', [MainController::class, 'home']);
+Route::get('/', [MainController::class, 'home'])->name('home');
+Route::get('/signup', [SignUpController::class, 'signup']);
+Route::post('/signup/check', [SignUpController::class, 'signupCheck']);
+Route::get('/welcome', function () {
+    return view('welcome');
+});
