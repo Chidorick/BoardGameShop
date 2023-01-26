@@ -24,9 +24,13 @@
                 </ul>
 
                 <div class="text-end">
-                    <button type="button" class="btn btn-success">Login</button>
-                    <button type="button" class="btn btn-success" onclick='location.href="/signup"'>Sign-up</button>
-                    <button type="button" class="btn btn-warning">Cart</button>
+                    @if (auth()->check())
+                        <button type="button" class="btn btn-success" onclick='location.href="/logout"'>Logout {{ Auth::user()->name }}</button>
+                    @else
+                        <button type="button" class="btn btn-success" onclick='location.href="/login"'>Login</button>
+                        <button type="button" class="btn btn-success" onclick='location.href="/signup"'>Sign-up</button>
+                    @endif
+                    <button type="button" class="btn btn-warning" onclick='location.href="/cart"'>Cart</button>
                 </div>
             </div>
         </div>

@@ -18,7 +18,7 @@
                                 <p class="card-text">{{ $card->description }}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-warning">In Cart</button>
+                                        <button type="button" class="btn btn-success" onclick='location.href="/addtocart/{{$card->id}}"'>In Cart</button>
                                     </div>
                                     <small class="fs-5">{{ $card->price }} ₽</small>
                                 </div>
