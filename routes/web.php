@@ -23,7 +23,7 @@ Route::get('/username', function () {
 Route::get('/login', [LoginController::class, 'login']);
 Route::get('/logout', [LogoutController::class, 'logout']);
 Route::post('/login/check', [LoginController::class, 'login_check']);
-
+Route::post('/run-script', 'ScriptController@run')->name('run-script');
 Route::get('/addtocart/{good_id}', [AddToCartController::class, 'addToCart']);
 Route::post('/addtocart/check', [AddToCartController::class, 'addToCartCheck']);
 
