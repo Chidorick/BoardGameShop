@@ -1,0 +1,26 @@
+.table-image {
+    font-size: 1.2rem;
+    background-color: #ffffff;
+  }
+  
+  .image-container {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .btn-peach {
+    background-color: #ef6747;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-peach:hover {
+    background-color: #e45e40;
+}

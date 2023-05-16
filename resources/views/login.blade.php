@@ -5,29 +5,41 @@
 @endsection
 
 @section('main_content')
-    <h1 class="h3 mb-3 fw-normal">Login</h1>
-    @if($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    <form method="POST" action="login/check">
-        @csrf
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mx-auto mt-5">
+                    <div class="card-header">
+                        <h1 class="h3 mb-3 fw-normal">Login</h1>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <form method="POST" action="login/check">
+                            @csrf
 
-        <div class="form-floating">
-            <input type="text" class="form-control" name="email" id="email" placeholder="Bob@example.com">
-            <label for="floatingName">Email</label>
-        </div>
+                            <div class="form-group">
+                                <label for="floatingName">Email</label>
+                                <input type="text" class="form-control" name="email" id="email"
+                                    placeholder="Bob@example.com">
+                            </div>
 
-        <div class="form-floating">
-            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-        </div>
+                            <div class="form-group">
+                                <label for="floatingPassword">Password</label>
+                                <input type="password" class="form-control" name="password" id="password"
+                                    placeholder="Password">
+                            </div>
 
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
-    </form>
+                            <button class="w-100 btn btn-lg btn-primary btn-success" type="submit">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

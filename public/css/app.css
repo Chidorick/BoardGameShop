@@ -1,0 +1,61 @@
+img {
+    border-radius: 8px;
+}
+
+.btn-ok {
+    display: inline-block;
+    width: 100px;
+    height: 100px;;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    transition: background-color 0s ease;
+    cursor: pointer;
+  }
+  
+  .btn-ok:hover {
+    background-color: #198754;
+}
+
+  .btn-ok {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 5px;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 32px;
+}
+
+body{
+    background: repeating-linear-gradient(46deg, #ffffff, #ffffff 50%, #198754 50%, #198754);
+}
+
+header{
+    background-color: #faa71a;
+  }
+  
+  html, body {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #faa71a;
+    padding: 30px;
+    text-align: center;
+}
