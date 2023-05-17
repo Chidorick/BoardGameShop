@@ -28,15 +28,19 @@
                                 <input type="text" class="form-control" name="email" id="email"
                                     placeholder="Bob@example.com">
                             </div>
-
+    
                             <div class="form-group">
                                 <label for="floatingPassword">Пароль</label>
                                 <input type="password" class="form-control" name="password" id="password"
                                     placeholder="Password">
                             </div>
-
+    
                             <button class="w-100 btn btn-lg btn-primary btn-success" type="submit">Войти</button>
                         </form>
+    
+                        <div class="text-center mt-3">
+                            <p>Нет аккаунта? <a href="/signup">Зарегистрироваться</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
