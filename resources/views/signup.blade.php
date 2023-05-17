@@ -10,7 +10,7 @@
             <div class="col-md-6">
                 <div class="card mx-auto mt-5">
                     <div class="card-header">
-                        <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
+                        <h1 class="h3 mb-3 fw-normal">Зарегистрироваться</h1>
                         @if ($errors->any())
                             <div class="alert alert-danger">
                                 <ul>
@@ -25,26 +25,26 @@
 
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" name="name" id="name" placeholder="Bob">
-                                <label for="floatingName">Username</label>
+                                <label for="floatingName">Имя аккаунта</label>
                             </div>
 
                             <div class="form-floating mb-3">
                                 <input type="email" class="form-control" name="email" id="email"
                                     placeholder="name@example.com">
-                                <label for="floatingEmail">Email address</label>
+                                <label for="floatingEmail">Email</label>
                             </div>
 
                             <div class="form-floating mb-3">
                                 <input type="password" class="form-control" name="password" id="password"
                                     placeholder="Password">
-                                <label for="floatingPassword">Password</label>
+                                <label for="floatingPassword">Пароль</label>
                             </div>
 
-                            <button class="w-100 btn btn-lg btn-success" type="submit">Sign Up</button>
+                            <button class="w-100 btn btn-lg btn-success" type="submit">Зарегистрироваться</button>
                         </form>
 
                         <div class="text-center mt-3">
-                            <p>Already registered? <a href="/login">Log In</a></p>
+                            <p>Уже зарегистрированы? <a href="/login">Войти</a></p>
                         </div>
                     </div>
                 </div>

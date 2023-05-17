@@ -10,7 +10,7 @@
             <div class="col-md-6">
                 <div class="card mx-auto mt-5">
                     <div class="card-header">
-                        <h1 class="h3 mb-3 fw-normal">Login</h1>
+                        <h1 class="h3 mb-3 fw-normal">Вход в аккаунт</h1>
                         @if ($errors->any())
                             <div class="alert alert-danger">
                                 <ul>
@@ -30,12 +30,12 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="floatingPassword">Password</label>
+                                <label for="floatingPassword">Пароль</label>
                                 <input type="password" class="form-control" name="password" id="password"
                                     placeholder="Password">
                             </div>
 
-                            <button class="w-100 btn btn-lg btn-primary btn-success" type="submit">Login</button>
+                            <button class="w-100 btn btn-lg btn-primary btn-success" type="submit">Войти</button>
                         </form>
                     </div>
                 </div>

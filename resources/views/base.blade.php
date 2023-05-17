@@ -30,16 +30,16 @@
             <div class="text-end mx-3 mx-lg-5">
                 @if (auth()->check())
                     <button type="button" class="btn btn-success btn-lg wider-font"
-                        onclick='location.href="/logout"'>Logout
+                        onclick='location.href="/logout"'>Выйти
                         {{ Auth::user()->name }}</button>
                 @else
                     <button type="button" class="btn btn-success btn-lg wider-font"
-                        onclick='location.href="/login"'>Login</button>
+                        onclick='location.href="/login"'>Войти</button>
                     <button type="button" class="btn btn-success btn-lg wider-font"
-                        onclick='location.href="/signup"'>Sign-up</button>
+                        onclick='location.href="/signup"'>Зарегистрироваться</button>
                 @endif
                 <button type="button" class="btn btn-success btn-lg wider-font" onclick='location.href="/cart"'>
-                    <i class="fas fa-shopping-cart"></i> Cart
+                    <i class="fas fa-shopping-cart"></i> Корзина
                 </button>
             </div>
         </div>

@@ -21,12 +21,14 @@ Route::get('/username', function () {
     return ($name);
 });
 
-Route::get('/login', [LoginController::class, 'login']);
-Route::get('/logout', [LogoutController::class, 'logout']);
-Route::post('/login/check', [LoginController::class, 'login_check']);
-Route::post('/run-script', 'ScriptController@run')->name('run-script');
-Route::get('/addtocart/{good_id}', [AddToCartController::class, 'addToCart']);
-Route::post('/addtocart/check', [AddToCartController::class, 'addToCartCheck']);
-Route::post('/clearcart', [ClearCartController::class, 'clearCart'])->name('clearCart');
-Route::get('/cart', [CartController::class, 'getCartTable']);
 Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login/check', [LoginController::class, 'login_check']);
+Route::get('/logout', [LogoutController::class, 'logout']);
+Route::post('/run-script', 'ScriptController@run')->name('run-script');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/addtocart/{good_id}', [AddToCartController::class, 'addToCart']);
+    Route::post('/addtocart/check', [AddToCartController::class, 'addToCartCheck']);
+    Route::post('/clearcart', [ClearCartController::class, 'clearCart'])->name('clearCart');
+    Route::get('/cart', [CartController::class, 'getCartTable']);
+});
