@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Good;
 use App\Models\CartItem;
 
-
 class AddToCartController extends Controller
 {
     public function addToCart(int $good_id)
@@ -22,40 +21,39 @@ class AddToCartController extends Controller
             'good_id' => 'required',
             'quantity' => 'required|min:1|max:99999'
         ]);
-        $user_id = Auth::id();
-        $good = Good::find($request->input('good_id'));
-        if (
-            CartItem::where(
-                'user_id',
-                $user_id
-            )
-                ->where(
-                    'good_id',
-                    $good->id
-                )
-                ->where(
-                    'active',
-                    1
-                )
-                ->exists()
-        ) {
-            $cartItem = DB::table('cart_items')->where('user_id', $user_id)
-                ->where('good_id', $good->id)
-                ->where('active', 1)
-                ->first();
-            DB::table('cart_items')->where('user_id', $user_id)
-                ->where('good_id', $good->id)
-                ->where('active', 1)
-                ->update(['quantity' => $cartItem->quantity + $request->input('quantity')]);
+
+        if (Auth::check()) {
+            $user_id = Auth::id();
+            $good = Good::find($request->input('good_id'));
+
+            if (
+                CartItem::where('user_id', $user_id)
+                    ->where('good_id', $good->id)
+                    ->where('active', 1)
+                    ->exists()
+            ) {
+                $cartItem = DB::table('cart_items')->where('user_id', $user_id)
+                    ->where('good_id', $good->id)
+                    ->where('active', 1)
+                    ->first();
+
+                DB::table('cart_items')->where('user_id', $user_id)
+                    ->where('good_id', $good->id)
+                    ->where('active', 1)
+                    ->update(['quantity' => $cartItem->quantity + $request->input('quantity')]);
+            } else {
+                $cartItem = new CartItem;
+                $cartItem->good_id = $good->id;
+                $cartItem->user_id = $user_id;
+                $cartItem->quantity = $request->input('quantity');
+                $cartItem->price = $cartItem->quantity * $good->price;
+                $cartItem->active = 1;
+                $cartItem->save();
+            }
+
+            return redirect()->route('home')->with('success', "Товар успешно добавлен в корзину");
         } else {
-            $cartItem = new CartItem;
-            $cartItem->good_id = $good->id;
-            $cartItem->user_id = $user_id;
-            $cartItem->quantity = $request->input('quantity');
-            $cartItem->price = $cartItem->quantity * $good->price;
-            $cartItem->active = 1;
-            $cartItem->save();
+            return redirect()->route('login')->with('message', "Для добавления товара в корзину войдите или зарегистрируйтесь");
         }
-        return redirect()->route('home')->with('succses', "Товар успешно добавлен в корзину");
     }
 }

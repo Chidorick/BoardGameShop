@@ -1,21 +1,21 @@
 .table-image {
     font-size: 1.2rem;
     background-color: #ffffff;
-  }
-  
-  .image-container {
+}
+
+.image-container {
     width: 100px;
     height: 100px;
     overflow: hidden;
-  }
-  
-  .image-container img {
+}
+
+.image-container img {
     object-fit: cover;
     width: 100%;
     height: 100%;
-  }
+}
 
-  .btn-peach {
+.btn-peach {
     background-color: #ef6747;
     color: #fff;
     transition: background-color 0.3s ease;
@@ -23,4 +23,107 @@
 
 .btn-peach:hover {
     background-color: #e45e40;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup {
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    background-color: #fefefe;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content {
+    padding: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.green-button:hover {
+    opacity: 0.8;
+}
+
+.popup input[type="text"],
+.popup select,
+.popup input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.button {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.red-button {
+  background-color: #ef6747;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.red-button:hover {
+  background-color: #d95f3f;
+}
+
+.green-button {
+  background-color: #198754;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.green-button:hover {
+  background-color: #157845;
+}
+
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }

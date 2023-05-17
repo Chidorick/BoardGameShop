@@ -8,6 +8,7 @@ use Nette\Utils\Image;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\AddToCartController;
+use App\Http\Controllers\ClearCartController;
 use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,5 +27,6 @@ Route::post('/login/check', [LoginController::class, 'login_check']);
 Route::post('/run-script', 'ScriptController@run')->name('run-script');
 Route::get('/addtocart/{good_id}', [AddToCartController::class, 'addToCart']);
 Route::post('/addtocart/check', [AddToCartController::class, 'addToCartCheck']);
-
+Route::post('/clearcart', [ClearCartController::class, 'clearCart'])->name('clearCart');
 Route::get('/cart', [CartController::class, 'getCartTable']);
+Route::get('/login', [LoginController::class, 'login'])->name('login');

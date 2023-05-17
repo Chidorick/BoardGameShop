@@ -28,9 +28,12 @@ img {
     font-size: 32px;
 }
 
-body{
-    background: repeating-linear-gradient(46deg, #ffffff, #ffffff 50%, #198754 50%, #198754);
-}
+body {
+    background: repeating-linear-gradient(90deg, #ffffff, #ffffff 80%, #198754 20%, #198754);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 
 header{
     background-color: #faa71a;
@@ -44,18 +47,17 @@ header{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
+    flex-grow: 1;
+  }
+
 
 .content {
     flex-grow: 1;
 }
 
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    margin-top: auto;
     background-color: #faa71a;
     padding: 30px;
     text-align: center;
-}
+  }

@@ -48,9 +48,13 @@
     <div>
         @yield('main_content')
     </div>
+    <br>
+    <br>
+    <br>
+    <footer class="footer">
+        Okorokov N.D. IKBO-02-20
+    </footer>
+    
 </body>
-<footer class="footer">
-    Okorokov N.D. IKBO-02-20
-</footer>
 
 </html>
