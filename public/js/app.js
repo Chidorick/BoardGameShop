@@ -18,4 +18,12 @@ function changeBackgroundColor() {
   setTimeout(changeBackgroundColor, 500);
 }
 
+const searchButtons = document.querySelectorAll('.search-form .btn');
+
+searchButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        button.classList.add('active');
+    });
+});
+
 changeBackgroundColor(); 

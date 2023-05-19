@@ -15,7 +15,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="card-body">
-                            <h5 class="card-title">Add to Cart</h5>
+                            <h5 class="card-title">Добавить в корзину</h5>
                             <p class="card-text">{{ $card->description }}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <small class="fs-5">{{ $card->price }} ₽</small>
@@ -37,7 +37,7 @@
                                     <input type="number" class="form-control w-100" id="quantity" name="quantity" min="1" max="99999" value="1">
                                 </div>
                                 <button class="btn btn-success btn-block" type="submit">
-                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                    <i class="fas fa-shopping-cart"></i> Добавить в корзину
                                 </button>
                             </form>
                         </div>

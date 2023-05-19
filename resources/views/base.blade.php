@@ -27,6 +27,19 @@
                 <button type="button" class="btn-ok mx-3" onclick="location.href='/';">OkOk</button>
             </ul>
 
+            <div class="d-flex justify-content-center align-items-center mb-4">
+                <search-form>
+                    <form action="{{ route('home') }}" method="GET" class="search-form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="name" placeholder="Поиск по имени" value="{{ request('name') }}">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="submit">Искать</button>
+                            </div>
+                        </div>
+                    </form>
+                </search-form>
+            </div>
+
             <div class="text-end mx-3 mx-lg-5">
                 @if (auth()->check())
                     <button type="button" class="btn btn-success btn-lg wider-font"
